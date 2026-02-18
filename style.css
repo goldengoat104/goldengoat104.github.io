@@ -1,6 +1,8 @@
 h1 {text-align:center;
+    font-family: 'Cormorant Garamond', serif;
    }
 h2 {text-align:center;
+    font-family: 'Cormorant Garamond', serif;
    }
 .animated-hr {
   width: 80%;
@@ -17,6 +19,8 @@ h2 {text-align:center;
 }
 p{
   font-size: 22px;
+  text-align: justify;
+
 }
 nav {
   background-color: #178A17;
@@ -73,11 +77,14 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    font-family: 'Pirata One', serif;
+ 
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     margin: 0;
     font-size: 25px;
+}
+.titre h1 {
+    font-family: 'Pirata One', serif;
 }
 
 .container {
@@ -98,3 +105,10 @@ body {
     margin: 0;
     background-color: #EDEDED; /* Couleur des côtés */
 }
+.responsive-img {
+  width: 100%;    /* l’image remplit le parent horizontalement */
+  height: auto;   /* garde les proportions */
+  max-width: 600px; /* optionnel : limite sur grand écran */
+  display: block; /* supprime l’espace sous l’image */
+}
+
