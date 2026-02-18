@@ -38,19 +38,22 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 50%;
+  
 }
 .titre {
     position: absolute;           /* on le centre par rapport au header */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    font-family: 'Pirata One', serif;
+  
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     margin: 0;
     font-size: 25px;
 }
-
+.titre h1 {
+    font-family: 'Pirata One', serif;
+}
 .container {
     width: 70%;
     max-width: 1200px;
@@ -70,11 +73,15 @@ body {
     background-color: #EDEDED; /* Couleur des côtés */
 }
 h1 {text-align:center;
+    font-family: 'Cormorant Garamond', serif;
    }
 h2 {text-align:center;
+    font-family: 'Cormorant Garamond', serif;
    }
 p{
   font-size: 22px;
+  text-align: justify;
+
 }
 .animated-hr {
   width: 80%;
@@ -88,4 +95,81 @@ p{
 
 .animated-hr.visible {
   transform: scaleX(1);
+}
+.hotel-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card */
+.hotel-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Image */
+.hotel-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Overlay sombre */
+.hotel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+}
+
+/* Nom hôtel */
+.hotel-info {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.hotel-info h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Effets hover */
+.hotel-card:hover {
+  transform: translateY(-5px);
+}
+
+.hotel-card:hover img {
+  transform: scale(1.1);
+}
+
+.hotel-card:hover::after {
+  background: rgba(0,0,0,0.6);
+}
+footer {
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg");
+  background-size: cover;        /* Remplit toute la largeur */
+  background-position: center;   /* Centre l’image */
+  background-repeat: no-repeat;  /* Évite la répétition */
+  
+  height: 100px;                 /* Hauteur du bandeau */
+  width: 100%;
+}
+.responsive-img {
+  width: 100%;    /* l’image remplit le parent horizontalement */
+  height: auto;   /* garde les proportions */
+  max-width: 600px; /* optionnel : limite sur grand écran */
+  display: block; /* supprime l’espace sous l’image */
 }
