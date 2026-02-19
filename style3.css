@@ -1,0 +1,223 @@
+h1 {text-align:center;
+    font-family: 'Cormorant Garamond', serif;
+   }
+.titre-elegant {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #2c2c2c;
+   }
+p{
+  font-size: 22px;
+  text-align: justify;
+}
+div.gallery {
+  display: flex;
+  justify-content: center;   
+  gap: 30px;                 
+  flex-wrap: wrap;          
+  margin-bottom: 60px;
+}
+div.gallery-item {
+  width: 250px;             
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+div.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+div.gallery-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.encadre {
+  background-color: #F9F6F3;
+  border: 0.5px solid black;
+  border-radius: 15px;
+}
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 60px 0;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.photo a {
+  flex: 1; 
+}
+.photo .texte,
+.photo div {
+  flex: 1; 
+}
+
+@media (max-width: 768px) {
+  .photo {
+    flex-direction: column;
+  }
+  .photo a,
+  .photo .texte,
+  .photo div {
+    width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.hero-img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+}
+ 
+ 
+ 
+ 
+ 
+
+nav {
+  background-color: #178A17;
+  padding: 0;
+  overflow: hidden; 
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;        
+  padding: 25px 15px;         
+  font-size: clamp(16px, 2vw, 25px); 
+}
+@media (min-width: 768px) {
+  nav a {
+    padding: 30px 20px;      
+  }
+}
+nav a:hover {
+  background-color: #555;
+}
+
+header {
+  position: relative;         
+  display: flex;
+  align-items: center;        
+  padding: 20px;
+  height: 220px;              
+}
+.logo {
+  width: 200px;
+  height: 200px;
+  background-image: url("https://jolly-roger.fr/wp-content/uploads/2021/07/black-sam-pirate.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  z-index: 2;                 
+}
+
+.titre {
+  position: absolute;         
+  left: 50%;                   
+  top: 50%;                   
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 1;
+}
+.titre h1 {
+  font-family: 'Pirata One', serif;
+  font-size: 50px;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.titre img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    padding: 10px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  .titre h1 {
+    font-size: 28px;
+  }
+  .titre img {
+    width: 100px;
+  }
+}
+.container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0px auto; 
+    background: white;
+    min-height: 90vh;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.05); 
+}
+body {
+    margin: 0;
+    background-color: #EDEDED; 
+}
+.animated-hr {
+  width: 80%;
+  height: 3px;
+  background: green;
+  border: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+.animated-hr.visible {
+  transform: scaleX(1);
+}
+footer {
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  
+  height: 100px;                
+  width: 100%;
+}
