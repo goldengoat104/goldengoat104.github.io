@@ -14,7 +14,8 @@
 <div class="container">
 <body>
 <header>
-    <div class="logo"></div>
+  <a href="https://www.youtube.com/watch?v=7CeP_sRh_Ms&t=0s" target="_blank" class="logo"></a>
+
     <div class="titre">
     <h1>Black Sam Voyages </h1>
 
@@ -27,7 +28,7 @@
     <li><a href="./">Accueil</a></li>
     <li><a href="activites.html">Activités</a></li>
     <li><a href="logistique.html">Logistique</a></li>
-    <li><a href="qcm.html">QCM</a></li>
+    <li><a href="QCM_JavaScript.html">QCM</a></li>
 
   </ul>
 </nav>
@@ -53,7 +54,7 @@ Plusieurs aéroports se trouvent proche de la Côte Amalfitaine :
    <ul>
 	<li><a href="https://flights.booking.com/flights/PAR.CITY-NAP.AIRPORT/?type=ROUNDTRIP&adults=1&cabinClass=ECONOMY&children=&from=PAR.CITY&to=NAP.AIRPORT&fromCountry=FR&toCountry=IT&fromLocationName=Paris&toLocationName=A%C3%A9roport+international+de+Naples-Capodichino&stops=0&depart=2026-03-21&return=2026-03-28&sort=BEST&travelPurpose=leisure&ca_source=flights_fly_anywhere_sb&aid=347388&label=msn-qGyL22H8zipC7fD*DifZGw-80195802858120%3Atikwd-80196020625026%3Aloc-66%3Aneo%3Amte%3Alp126885%3Adec%3Acid578703017%3Aagid1283130706463429">Aéroport de Naples – Capodichino (NAP)</a></li>➡️ Aéroport international le plus proche, idéal
 	<li><a href="https://flights.booking.com/flights/ROM.CITY-QSR.AIRPORT/?type=ROUNDTRIP&adults=1&cabinClass=ECONOMY&children=&from=ROM.CITY&to=QSR.AIRPORT&fromCountry=IT&toCountry=IT&fromLocationName=Rome&toLocationName=A%C3%A9roport+de+Salerne-C%C3%B4te+amalfitaine&stops=0&depart=2026-03-21&return=2026-03-28&sort=BEST&travelPurpose=leisure&ca_source=flights_search_sb&aid=347388&label=msn-qGyL22H8zipC7fD*DifZGw-80195802858120%3Atikwd-80196020625026%3Aloc-66%3Aneo%3Amte%3Alp126885%3Adec%3Acid578703017%3Aagid1283130706463429">Aéroport de Salerne – Costa d’Amalfi (QSR)</a></li>➡️Très proche, desservi par certaines compagnies low-coast ou vols intérieurs 
-	<li><a href="https://flights.booking.com/flights/PAR.CITY-ROM.CITY/?type=ROUNDTRIP&adults=1&cabinClass=ECONOMY&children=&from=PAR.CITY&to=ROM.CITY&fromCountry=FR&toCountry=IT&fromLocationName=Paris&toLocationName=Rome&stops=0&depart=2026-03-21&return=2026-03-28&sort=BEST&travelPurpose=leisure&ca_source=flights_search_sb&aid=347388&label=msn-qGyL22H8zipC7fD*DifZGw-80195802858120%3Atikwd-80196020625026%3Aloc-66%3Aneo%3Amte%3Alp126885%3Adec%3Acid578703017%3Aagid1283130706463429">Aéroport de Rome – Fiumicino (FCO) ou Ciampino (CIA)</a></li>➡️Vols internationaux de Tokyo à Los Angeles, mais à 300km de la côte
+	<li><a href="https://flights.booking.com/flights/PAR.CITY-ROM.CITY/?type=ROUNDTRIP&adults=1&cabinClass=ECONOMY&children=&from=PAR.CITY&to=ROM.CITY&fromCountry=FR&toCountry=IT&fromLocationName=Paris&toLocationName=Rome&stops=0&depart=2026-03-21&return=2026-03-28&sort=BEST&travelPurpose=leisure&ca_source=flights_search_sb&aid=347388&label=msn-qGyL22H8zipC7fD*DifZGw-80195802858120%3Atikwd-80196020625026%3Aloc-66%3Aneo%3Amte%3Alp126885%3Adec%3Acid578703017%3Aagid1283130706463429">Aéroports de Rome – Fiumicino (FCO) ou Ciampino (CIA)</a></li>➡️Vols internationaux de Tokyo à Los Angeles, mais à 300km de la côte
    </ul> <br>
 <hr class="animated-hr">
 <p id="lien_ancre_2"><h2>Se déplacer sur place 🚗</h2></p>
@@ -139,7 +140,7 @@ De nombreux hôtels permettent aux voyageurs de se loger pendant leur séjour. N
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       } else {
-        entry.target.classList.remove('visible'); // 👈 on retire quand ça sort
+        entry.target.classList.remove('visible');
       }
     });
   }, {
