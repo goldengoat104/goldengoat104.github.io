@@ -34,6 +34,84 @@
 <br><br><br>
 <h1>Le QCM</h1>
 <br><br>
+1) Qui, selon la légende, empruntait le chemin surplombant la Côte Amalfitaine ? <br><select id="q1" name="lang" onchange="selection()">
+<option value=""> Choisir une réponse </option>
+
+<option value="jc"> Les Apôtres de Jésus-Christ </option>
+<option value="do"> Les Dieux de l'Olympe </option>
+<option value="he"> Hannibal et ses éléphants </option>
+<option value="ms"> Michael Scofield </option>
+</select> <br>
+2) Quel aéroport nous vous recommandons pour aller sur la côte ? <br><select id="q2" name="lang" onchange="selection()">
+<option value=""> Choisir une réponse </option>
+
+<option value="sa"> Aéroport de Salerne – Costa d’Amalfi (QSR) </option>
+<option value="ro"> Aéroports de Rome – Fiumicino (FCO) ou Ciampino (CIA) </option>
+<option value="na"> Aéroport de Naples – Capodichino (NAP) </option>
+<option value="pa"> Aéroport de Palerme (PMO) </option>
+</select>
+<script>
+ function selection()
+ {
+    const selecteur = document.getElementById("choix");
+    const monChoix=selecteur[selecteur.selectedIndex];
+ }
+</script>
+<br>
+3)Quel célèbre site archéologique se trouve sur la Côte Amalfitaine ? Ecrire le résultat sans accent<FORM>
+ <input type="text" name="Valeur_Reponse" id="q3" value="" />
+
+</FORM>
+4)Quel est le seul restaurant 3 étoiles de la côte ? Ecrire le résultat sans accent<FORM>
+ <input type="text" name="Valeur_Reponse" id="q4" value="" />
+ 
+</FORM>
+<br><br>
+<script>
+
+</script>
+<br><br>
+<button onclick="corrigerQuiz()">Voir le score</button>
+
+<p id="resultat"></p>
+
+<script>
+
+function corrigerQuiz() {
+
+let score = 0;
+
+// question 1
+let rep1 = document.getElementById("q1").value;
+if(rep1 === "do"){
+score++;
+}
+
+// question 2
+let rep2 = document.getElementById("q2").value;
+if(rep2 === "na"){
+score++;
+}
+
+// question 3
+let rep3 = document.getElementById("q3").value.toLowerCase();
+if(rep3 === "pompei"){
+score++;
+}
+
+// question 4
+let rep4 = document.getElementById("q4").value.toLowerCase();
+if(rep4 === "quattro passi"){
+score++;
+}
+
+// affichage score
+document.getElementById("resultat").innerHTML =
+"Votre score est : " + score + " / 4";
+
+}
+
+</script>
 <footer>
 
 </footer>
