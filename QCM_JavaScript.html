@@ -138,7 +138,31 @@ document.getElementById("resultat").innerHTML =
 "Votre score est : " + score + " / 4";
 
 }
+ if (allCorrect()) {
+      dropBallon();
+    }
+  }
 
+  function allCorrect() {
+    for (let q in answers) {
+      if (userSelections[q] !== answers[q]) return false;
+    }
+    return true;
+  }
+
+  function dropBallon() {
+    const ballon = document.createElement('div');
+    ballon.className = 'ballon';
+    ballon.textContent = '🎈';
+    // Position horizontale aléatoire
+    ballon.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+    document.body.appendChild(ballon);
+
+    // Supprimer le ballon après 3s
+    setTimeout(() => {
+      ballon.remove();
+    }, 3000);
+  }
 </script>
 <footer>
 
