@@ -150,3 +150,11 @@ h1 {text-align:center;
     transform: translateY(-110vh);
   }
 }
+  .answer {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #333;
+    display: inline-block;
+    user-select: none;
+  }
