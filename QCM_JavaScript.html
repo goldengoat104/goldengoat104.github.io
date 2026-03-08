@@ -116,8 +116,8 @@ if(rep4 === "quattro passi"){
 score++;
 }
   const answers = {
-    question1: false, // La Terre n'est pas plate
-    question2: true   // Le Soleil est une étoile
+    question1: false
+    question2: true   
   };
 
   function checkAnswer(userAnswer, questionId) {
@@ -144,10 +144,9 @@ document.getElementById("resultat").innerHTML =
   }
 
   function allCorrect() {
-    for (let q in answers) {
-      if (userSelections[q] !== answers[q]) return false;
-    }
-    return true;
+    
+      if ( corrigerQuiz()!== 6) return false;
+    }    return true;
   }
 
   function dropBallon() {
