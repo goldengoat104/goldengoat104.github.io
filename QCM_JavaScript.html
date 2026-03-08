@@ -66,7 +66,7 @@
 
 <br><br>
 
-<!-- QUESTION 5 -->
+
 <div class="question" id="question1">
 5) La ville de Capri est connue pour ses plages ?<br>
 <button onclick="checkAnswer(true,'q5')">Vrai</button>
@@ -75,7 +75,7 @@
 
 <br>
 
-<!-- QUESTION 6 -->
+
 <div class="question" id="question2">
 6) Pour entrer sur la Côte Amalfitaine, il suffit d'avoir juste un passeport ?<br>
 <button onclick="checkAnswer(true,'q6')">Vrai</button>
@@ -99,73 +99,67 @@ function checkAnswer(reponse, question){
 reponsesVF[question] = reponse;
 }
 
-function corrigerQuiz(){
+function corrigerQuiz() {
 
 let score = 0;
 
 // question 1
 let rep1 = document.getElementById("q1").value;
-if(rep1 === "do"){
-score++;
-}
+if(rep1 === "do"){ score++; }
 
 // question 2
 let rep2 = document.getElementById("q2").value;
-if(rep2 === "na"){
-score++;
-}
+if(rep2 === "na"){ score++; }
 
 // question 3
 let rep3 = document.getElementById("q3").value.toLowerCase();
-if(rep3 === "pompei"){
-score++;
-}
+if(rep3 === "pompei"){ score++; }
 
 // question 4
 let rep4 = document.getElementById("q4").value.toLowerCase();
-if(rep4 === "quattro passi"){
-score++;
-}
+if(rep4 === "quattro passi"){ score++; }
 
-// question 5 (bonne réponse : faux)
-if(reponsesVF.q5 === false){
-score++;
-}
+// question 5
+if(reponsesVF.q5 === false){ score++; }
 
-// question 6 (bonne réponse : faux)
-if(reponsesVF.q6 === true){
-score++;
-}
+// question 6
+if(reponsesVF.q6 === true){ score++; }
+
 
 document.getElementById("resultat").innerHTML =
 "Votre score est : " + score + " / 6";
 
+
+if(score === 6){
+dropBallon();
 }
 
- if (allCorrect()) {
-      dropBallon();
-    }
-  }
+}
+function dropBallon(){
 
-  function allCorrect() {
-    
-      if ( corrigerQuiz()!== 6) return false;
-    }    return true;
-  }
+for(let i=0; i<50; i++){
 
-  function dropBallon() {
-    const ballon = document.createElement('div');
-    ballon.className = 'ballon';
-    ballon.textContent = '🎈';
-    // Position horizontale aléatoire
-    ballon.style.left = Math.random() * (window.innerWidth - 50) + 'px';
-    document.body.appendChild(ballon);
+const ballon = document.createElement("div");
 
-    // Supprimer le ballon après 3s
-    setTimeout(() => {
-      ballon.remove();
-    }, 3000);
-  }
+ballon.className = "ballon";
+ballon.innerHTML = "🎈";
+
+
+ballon.style.left = Math.random() * window.innerWidth + "px";
+
+
+ballon.style.animationDelay = (Math.random()*2) + "s";
+
+document.body.appendChild(ballon);
+
+
+setTimeout(function(){
+ballon.remove();
+},5000);
+
+}
+
+}
 </script>
 <footer>
 
