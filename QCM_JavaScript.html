@@ -76,7 +76,7 @@
 <br>
 
 
-<div class="question" id="question2">
+<div class="question" name="reponse" id="question2">
 6) Pour entrer sur la Côte Amalfitaine, il suffit d'avoir juste un passeport ?<br>
 <button onclick="checkAnswer(true,'q6')">Vrai</button>
 <button onclick="checkAnswer(false,'q6')">Faux</button>
@@ -156,7 +156,30 @@ document.body.appendChild(ballon);
 setTimeout(function(){
 ballon.remove();
 },5000);
+const inputs = document.querySelectorAll('input[name="reponse"]');
+    const body = document.body;
 
+    inputs.forEach(input => {
+      input.addEventListener('change', () => {
+        if (input.checked) {
+          body.style.backgroundColor = 'black';
+          body.style.color = 'white'; // pour que le texte reste lisible
+        } else {
+          body.style.backgroundColor = 'white';
+          body.style.color = 'black';
+        }
+      });
+    });
+
+    // Remet le fond blanc si on change la réponse
+    document.querySelectorAll('input[name="reponse"]').forEach(input => {
+      input.addEventListener('click', () => {
+        if (!input.checked) {
+          body.style.backgroundColor = 'white';
+          body.style.color = 'black';
+        }
+      });
+    });
 }
 
 }
