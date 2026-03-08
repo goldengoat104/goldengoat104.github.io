@@ -34,61 +34,72 @@
 <br><br><br>
 <h1>Le QCM</h1>
 <br><br>
-1) Qui, selon la légende, empruntait le chemin surplombant la Côte Amalfitaine ? <br><select id="q1" name="lang" onchange="selection()">
+1) Qui, selon la légende, empruntait le chemin surplombant la Côte Amalfitaine ? <br>
+<select id="q1">
 <option value=""> Choisir une réponse </option>
-
 <option value="jc"> Les Apôtres de Jésus-Christ </option>
 <option value="do"> Les Dieux de l'Olympe </option>
 <option value="he"> Hannibal et ses éléphants </option>
 <option value="ms"> Michael Scofield </option>
-</select> <br>
-2) Quel aéroport nous vous recommandons pour aller sur la côte ? <br><select id="q2" name="lang" onchange="selection()">
-<option value=""> Choisir une réponse </option>
+</select>
 
+<br><br>
+
+2) Quel aéroport nous vous recommandons pour aller sur la côte ? <br>
+<select id="q2">
+<option value=""> Choisir une réponse </option>
 <option value="sa"> Aéroport de Salerne – Costa d’Amalfi (QSR) </option>
 <option value="ro"> Aéroports de Rome – Fiumicino (FCO) ou Ciampino (CIA) </option>
 <option value="na"> Aéroport de Naples – Capodichino (NAP) </option>
 <option value="pa"> Aéroport de Palerme (PMO) </option>
 </select>
-  <div class="question" id="question1">
-  <p>La ville de Capri est connue pour ces plages?</p>
-  <button onclick="checkAnswer(true, 'question1')">Vrai</button>
-  <button onclick="checkAnswer(false, 'question1')">Faux</button>
+
+<br><br>
+
+3) Quel célèbre site archéologique se trouve sur la Côte Amalfitaine ? (écrire sans accent)<br>
+<input type="text" id="q3">
+
+<br><br>
+
+4) Quel est le seul restaurant 3 étoiles de la côte ? (écrire sans accent)<br>
+<input type="text" id="q4">
+
+<br><br>
+
+<!-- QUESTION 5 -->
+<div class="question" id="question1">
+5) La ville de Capri est connue pour ses plages ?<br>
+<button onclick="checkAnswer(true,'q5')">Vrai</button>
+<button onclick="checkAnswer(false,'q5')">Faux</button>
 </div>
 
-<div class="question" id="question2">
-  <p>Pour entrer sur la Cote Amalfitaine, il suffit 'avoir juste un passeport?</p>
-  <button onclick="checkAnswer(true, 'question2')">Vrai</button>
-  <button onclick="checkAnswer(false, 'question2')">Faux</button>
-</div>
-<script>
- function selection()
- {
-    const selecteur = document.getElementById("choix");
-    const monChoix=selecteur[selecteur.selectedIndex];
- }
-</script>
 <br>
-3)Quel célèbre site archéologique se trouve sur la Côte Amalfitaine ? Ecrire le résultat sans accent<FORM>
- <input type="text" name="Valeur_Reponse" id="q3" value="" />
 
-</FORM>
-4)Quel est le seul restaurant 3 étoiles de la côte ? Ecrire le résultat sans accent<FORM>
- <input type="text" name="Valeur_Reponse" id="q4" value="" />
- 
-</FORM>
-<br><br>
-<script>
+<!-- QUESTION 6 -->
+<div class="question" id="question2">
+6) Pour entrer sur la Côte Amalfitaine, il suffit d'avoir juste un passeport ?<br>
+<button onclick="checkAnswer(true,'q6')">Vrai</button>
+<button onclick="checkAnswer(false,'q6')">Faux</button>
+</div>
 
-</script>
 <br><br>
+
 <button onclick="corrigerQuiz()">Voir le score</button>
 
 <p id="resultat"></p>
 
 <script>
 
-function corrigerQuiz() {
+let reponsesVF = {
+q5: null,
+q6: null
+};
+
+function checkAnswer(reponse, question){
+reponsesVF[question] = reponse;
+}
+
+function corrigerQuiz(){
 
 let score = 0;
 
@@ -115,29 +126,22 @@ let rep4 = document.getElementById("q4").value.toLowerCase();
 if(rep4 === "quattro passi"){
 score++;
 }
-  const answers = {
-    question1: false
-    question2: true   
-  };
 
-  function checkAnswer(userAnswer, questionId) {
-    const questionDiv = document.getElementById(questionId);
-    const correctAnswer = answers[questionId];
+// question 5 (bonne réponse : faux)
+if(reponsesVF.q5 === false){
+score++;
+}
 
-    if (userAnswer === correctAnswer) {
-      questionDiv.classList.add('correct');
-      questionDiv.classList.remove('wrong');
-    } else {
-      questionDiv.classList.add('wrong');
-      questionDiv.classList.remove('correct');
-    }
-  }
+// question 6 (bonne réponse : faux)
+if(reponsesVF.q6 === true){
+score++;
+}
 
-// affichage score
 document.getElementById("resultat").innerHTML =
-"Votre score est : " + score + " / 4";
+"Votre score est : " + score + " / 6";
 
 }
+
  if (allCorrect()) {
       dropBallon();
     }
