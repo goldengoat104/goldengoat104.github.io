@@ -76,10 +76,10 @@
 <br>
 
 
-<div class="question" name="reponse" id="question2">
+<div class="question" id="question2">
 6) Pour entrer sur la Côte Amalfitaine, il suffit d'avoir juste un passeport ?<br>
-<button onclick="checkAnswer(true,'q6')">Vrai</button>
-<button onclick="checkAnswer(false,'q6')">Faux</button>
+<button class="answer"onclick="checkAnswer(true,'q6')">Vrai</button>
+<button class="answer" onclick="checkAnswer(false,'q6')">Faux</button>
 </div>
 
 <br><br>
@@ -156,31 +156,22 @@ document.body.appendChild(ballon);
 setTimeout(function(){
 ballon.remove();
 },5000);
-const inputs = document.querySelectorAll('input[name="reponse"]');
-    const body = document.body;
+const answers = document.querySelectorAll('.answer');
+  const body = document.body;
 
-    inputs.forEach(input => {
-      input.addEventListener('change', () => {
-        if (input.checked) {
-          body.style.backgroundColor = 'black';
-          body.style.color = 'white'; // pour que le texte reste lisible
-        } else {
-          body.style.backgroundColor = 'white';
-          body.style.color = 'black';
-        }
-      });
+  answers.forEach(answer => {
+    answer.addEventListener('click', () => {
+      // Si le fond est blanc, passe à noir
+      if(body.style.backgroundColor === 'white' || body.style.backgroundColor === '') {
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+      } else {
+        // sinon revient à blanc
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+      }
     });
-
-    // Remet le fond blanc si on change la réponse
-    document.querySelectorAll('input[name="reponse"]').forEach(input => {
-      input.addEventListener('click', () => {
-        if (!input.checked) {
-          body.style.backgroundColor = 'white';
-          body.style.color = 'black';
-        }
-      });
-    });
-}
+  });
 
 }
 </script>
