@@ -94,43 +94,46 @@ let reponsesVF = {
   q6: null
 };
 
+// Fonction appelée quand on clique sur Vrai/Faux
 function checkAnswer(reponse, question){
   reponsesVF[question] = reponse;
 
-  // Vérifie si une question Vrai/Faux est répondue
+  // Si au moins une réponse Vrai/Faux est donnée → fond noir
   const anyAnswered = Object.values(reponsesVF).some(v => v !== null);
   if(anyAnswered){
     document.body.style.backgroundColor = 'black';
     document.body.style.color = 'white';
   } else {
-    document.body.style.backgroundColor = '#EDEDED'; // gris clair comme défini
+    // Sinon fond gris clair (couleur initiale) et texte noir
+    document.body.style.backgroundColor = '#EDEDED';
     document.body.style.color = 'black';
   }
 }
 
+// Fonction de correction du QCM
 function corrigerQuiz() {
   let score = 0;
 
-  // question 1
+  // Question 1
   let rep1 = document.getElementById("q1").value;
   if(rep1 === "do"){ score++; }
 
-  // question 2
+  // Question 2
   let rep2 = document.getElementById("q2").value;
   if(rep2 === "na"){ score++; }
 
-  // question 3
+  // Question 3
   let rep3 = document.getElementById("q3").value.toLowerCase();
   if(rep3 === "pompei"){ score++; }
 
-  // question 4
+  // Question 4
   let rep4 = document.getElementById("q4").value.toLowerCase();
   if(rep4 === "quattro passi"){ score++; }
 
-  // question 5
+  // Question 5
   if(reponsesVF.q5 === false){ score++; }
 
-  // question 6
+  // Question 6
   if(reponsesVF.q6 === true){ score++; }
 
   document.getElementById("resultat").innerHTML =
@@ -141,6 +144,7 @@ function corrigerQuiz() {
   }
 }
 
+// Animation des ballons
 function dropBallon(){
   for(let i=0; i<50; i++){
     const ballon = document.createElement("div");
@@ -153,7 +157,6 @@ function dropBallon(){
   }
 }
 </script>
-
 <footer>
 
 </footer>
