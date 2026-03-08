@@ -134,3 +134,20 @@ footer {
 h1 {text-align:center;
     font-family: 'Cormorant Garamond', serif;
    }
+.question {
+    border: 2px solid gray;
+    padding: 20px;
+    margin: 15px 0;
+    width: 300px;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+  }
+
+  .question.correct {
+    border-color: green;
+  }
+
+  .question.wrong {
+    border-color: red;
+  }
