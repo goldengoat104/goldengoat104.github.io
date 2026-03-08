@@ -134,20 +134,19 @@ footer {
 h1 {text-align:center;
     font-family: 'Cormorant Garamond', serif;
    }
-.question {
-    border: 2px solid gray;
-    padding: 20px;
-    margin: 15px 0;
-    width: 300px;
-    border-radius: 10px;
-    transition: border-color 0.3s;
-    background-color: #fff;
-  }
+.ballon {
+  position: fixed;
+  bottom: -80px;
+  font-size: 60px;
+  animation: monter 4s linear forwards;
+  z-index: 9999;
+}
 
-  .question.correct {
-    border-color: green;
+@keyframes monter {
+  from {
+    transform: translateY(0);
   }
-
-  .question.wrong {
-    border-color: red;
+  to {
+    transform: translateY(-110vh);
   }
+}
