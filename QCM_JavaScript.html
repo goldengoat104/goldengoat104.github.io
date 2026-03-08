@@ -89,92 +89,71 @@
 <p id="resultat"></p>
 
 <script>
-
 let reponsesVF = {
-q5: null,
-q6: null
+  q5: null,
+  q6: null
 };
 
 function checkAnswer(reponse, question){
-reponsesVF[question] = reponse;
+  reponsesVF[question] = reponse;
+
+  // Vérifie si une question Vrai/Faux est répondue
+  const anyAnswered = Object.values(reponsesVF).some(v => v !== null);
+  if(anyAnswered){
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = 'white';
+  } else {
+    document.body.style.backgroundColor = '#EDEDED'; // gris clair comme défini
+    document.body.style.color = 'black';
+  }
 }
 
 function corrigerQuiz() {
+  let score = 0;
 
-let score = 0;
+  // question 1
+  let rep1 = document.getElementById("q1").value;
+  if(rep1 === "do"){ score++; }
 
-// question 1
-let rep1 = document.getElementById("q1").value;
-if(rep1 === "do"){ score++; }
+  // question 2
+  let rep2 = document.getElementById("q2").value;
+  if(rep2 === "na"){ score++; }
 
-// question 2
-let rep2 = document.getElementById("q2").value;
-if(rep2 === "na"){ score++; }
+  // question 3
+  let rep3 = document.getElementById("q3").value.toLowerCase();
+  if(rep3 === "pompei"){ score++; }
 
-// question 3
-let rep3 = document.getElementById("q3").value.toLowerCase();
-if(rep3 === "pompei"){ score++; }
+  // question 4
+  let rep4 = document.getElementById("q4").value.toLowerCase();
+  if(rep4 === "quattro passi"){ score++; }
 
-// question 4
-let rep4 = document.getElementById("q4").value.toLowerCase();
-if(rep4 === "quattro passi"){ score++; }
+  // question 5
+  if(reponsesVF.q5 === false){ score++; }
 
-// question 5
-if(reponsesVF.q5 === false){ score++; }
+  // question 6
+  if(reponsesVF.q6 === true){ score++; }
 
-// question 6
-if(reponsesVF.q6 === true){ score++; }
+  document.getElementById("resultat").innerHTML =
+    "Votre score est : " + score + " / 6";
 
-
-document.getElementById("resultat").innerHTML =
-"Votre score est : " + score + " / 6";
-
-
-if(score === 6){
-dropBallon();
+  if(score === 6){
+    dropBallon();
+  }
 }
 
-}
 function dropBallon(){
-
-for(let i=0; i<50; i++){
-
-const ballon = document.createElement("div");
-
-ballon.className = "ballon";
-ballon.innerHTML = "🎈";
-
-
-ballon.style.left = Math.random() * window.innerWidth + "px";
-
-
-ballon.style.animationDelay = (Math.random()*2) + "s";
-
-document.body.appendChild(ballon);
-
-
-setTimeout(function(){
-ballon.remove();
-},5000);
-const answers = document.querySelectorAll('.answer');  
-const body = document.body;
-
-  answers.forEach(answer => {
-    answer.addEventListener('click', () => {
-      // Si le fond est blanc, passe à noir
-      if(body.style.backgroundColor === 'white' || body.style.backgroundColor === '') {
-        body.style.backgroundColor = 'black';
-        body.style.color = 'white';
-      } else {
-        // sinon revient à blanc
-        body.style.backgroundColor = 'white';
-        body.style.color = 'black';
-      }
-    });
-  });
-
+  for(let i=0; i<50; i++){
+    const ballon = document.createElement("div");
+    ballon.className = "ballon";
+    ballon.innerHTML = "🎈";
+    ballon.style.left = Math.random() * window.innerWidth + "px";
+    ballon.style.animationDelay = (Math.random()*2) + "s";
+    document.body.appendChild(ballon);
+    setTimeout(function(){ ballon.remove(); },5000);
+  }
 }
 </script>
+
 <footer>
 
 </footer>
