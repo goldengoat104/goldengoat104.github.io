@@ -50,6 +50,17 @@
 <option value="na"> Aéroport de Naples – Capodichino (NAP) </option>
 <option value="pa"> Aéroport de Palerme (PMO) </option>
 </select>
+  <div class="question" id="question1">
+  <p>La ville de Capri est connue pour ces plages?</p>
+  <button onclick="checkAnswer(true, 'question1')">Vrai</button>
+  <button onclick="checkAnswer(false, 'question1')">Faux</button>
+</div>
+
+<div class="question" id="question2">
+  <p>Pour entrer sur la Cote Amalfitaine, il suffit 'avoir juste un passeport?</p>
+  <button onclick="checkAnswer(true, 'question2')">Vrai</button>
+  <button onclick="checkAnswer(false, 'question2')">Faux</button>
+</div>
 <script>
  function selection()
  {
@@ -104,6 +115,23 @@ let rep4 = document.getElementById("q4").value.toLowerCase();
 if(rep4 === "quattro passi"){
 score++;
 }
+  const answers = {
+    question1: false, // La Terre n'est pas plate
+    question2: true   // Le Soleil est une étoile
+  };
+
+  function checkAnswer(userAnswer, questionId) {
+    const questionDiv = document.getElementById(questionId);
+    const correctAnswer = answers[questionId];
+
+    if (userAnswer === correctAnswer) {
+      questionDiv.classList.add('correct');
+      questionDiv.classList.remove('wrong');
+    } else {
+      questionDiv.classList.add('wrong');
+      questionDiv.classList.remove('correct');
+    }
+  }
 
 // affichage score
 document.getElementById("resultat").innerHTML =
