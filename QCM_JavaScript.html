@@ -94,23 +94,22 @@ let reponsesVF = {
   q6: null
 };
 
-// Fonction appelée quand on clique sur Vrai/Faux
 function checkAnswer(reponse, question){
   reponsesVF[question] = reponse;
 
-  // Si au moins une réponse Vrai/Faux est donnée → fond noir
+  // Vérifie si au moins une réponse Vrai/Faux est donnée
   const anyAnswered = Object.values(reponsesVF).some(v => v !== null);
   if(anyAnswered){
+    // Fond du body devient noir
     document.body.style.backgroundColor = 'black';
-    document.body.style.color = 'white';
+    // Texte dans le container reste noir pour rester lisible
+    document.querySelector('.container').style.color = 'black';
   } else {
-    // Sinon fond gris clair (couleur initiale) et texte noir
     document.body.style.backgroundColor = '#EDEDED';
-    document.body.style.color = 'black';
+    document.querySelector('.container').style.color = 'black';
   }
 }
 
-// Fonction de correction du QCM
 function corrigerQuiz() {
   let score = 0;
 
@@ -144,7 +143,6 @@ function corrigerQuiz() {
   }
 }
 
-// Animation des ballons
 function dropBallon(){
   for(let i=0; i<50; i++){
     const ballon = document.createElement("div");
